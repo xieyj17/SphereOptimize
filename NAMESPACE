@@ -1,1 +1,5 @@
 exportPattern("^[[:alpha:]]+")
+importFrom("stats", "optim")
+export(from.Sphere)
+export(to.Sphere)
+export(SphereOptimize)

@@ -1,4 +1,5 @@
-med.From.Sphere = function(theta, i){
+#' @description convert spherical coordinates to Cartesian coordinates at each coordinate
+.med.From.Sphere = function(theta, i){
   res = 1
   if(i <= length(theta)){
     temp_theta = theta[1:i]
@@ -20,8 +21,8 @@ med.From.Sphere = function(theta, i){
   return(res)
 }
 
-
-regularize.Theta = function(ang){
+#' @description make sure the angles are in correct range
+.regularize.Theta = function(ang){
   while(ang > 2*pi){
     ang = ang - 2*pi
   }

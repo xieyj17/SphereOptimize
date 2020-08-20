@@ -7,4 +7,5 @@ Maintainer: Yijun Xie <yijun.xie@uwaterloo.ca>
 Description: This package provides a simple tool for numerical optimization on the unit sphere. This is achieved by combining the spherical coordinating system with L-BFGS-B optimization.
 License: GPL-3
 LazyData: true
+Encoding: UTF-8 
 RoxygenNote: 7.0.2

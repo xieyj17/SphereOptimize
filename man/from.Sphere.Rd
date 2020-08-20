@@ -7,8 +7,8 @@
 from.Sphere(theta)
 }
 \arguments{
-\item{theta}{A list of angles. The first item should be between 0 to \pi, and the following items
-should be between 0 to 2\pi.}
+\item{theta}{A list of angles. The first item should be between 0 to pi, and the following items
+should be between 0 to 2*pi.}
 }
 \value{
 A vector of the corresponding Cartesian coordinates.

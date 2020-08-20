@@ -2,8 +2,8 @@
 #' @description The function from.Sphere convert a list of angles representing a point
 #' on a unit sphere to the corresponding Cartesian coordinates.
 #'
-#' @param theta A list of angles. The first item should be between 0 to \pi, and the following items
-#' should be between 0 to 2\pi.
+#' @param theta A list of angles. The first item should be between 0 to pi, and the following items
+#' should be between 0 to 2*pi.
 #'
 #' @return A vector of the corresponding Cartesian coordinates.
 #'
@@ -13,10 +13,10 @@
 from.Sphere = function(theta){
   s = rep(0,(length(theta)+1))
   for(k in length(theta)){
-    theta[k] = regularize.Theta(theta[k])
+    theta[k] = .regularize.Theta(theta[k])
   }
   for(i in 1:length(s)){
-    s[i] = med.From.Sphere(theta, i)
+    s[i] = .med.From.Sphere(theta, i)
   }
   return(s)
 }
@@ -97,13 +97,13 @@ SphereOptimize = function(par, fn, neighbor = NULL, ...){
   # optimize over the whole unit sphere
   if(is.null(neighbor)){
     theta = to.Sphere(par)
-    k = optim(theta, temp_fn, ...)
+    k = stats::optim(theta, temp_fn, ...)
     method = "Nelder-Mead"
   } else { # optimize over a neighbor of the initial value
     theta = to.Sphere(par)
     low_bd = theta - rep(neighbor, length(theta))
     up_bd = theta + rep(neighbor, length(theta))
-    k = optim(par, temp_fn, method = "L-BFGS-B", lower = lb, upper = ub, ...)
+    k = stats::optim(par, temp_fn, method = "L-BFGS-B", lower = low_bd, upper = up_bd, ...)
     method = "L-BFGS-B"
   }
   par = from.Sphere(k$par) # convert from spherical coordinates to Eculidean coordinates
