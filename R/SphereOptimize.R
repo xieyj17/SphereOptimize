@@ -60,7 +60,7 @@ to.Sphere = function(s){
 #' @param par Initial values for the parameters to be optimized over. Must be
 #' in Cartesian coordinates and on a unit sphere.
 #' @param fn A function to be minimized (or maximized).
-#' @param neighbor Size of neighbor to search for the optimal results. If not specified, this
+#' @param neighbor Radius of neighbor to search for the optimal results. If not specified, this
 #' function will search for the whole unit sphere.
 #' @param ... Extra arguments that can be passed to optim().
 #'
