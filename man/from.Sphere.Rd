@@ -17,3 +17,6 @@ A vector of the corresponding Cartesian coordinates.
 The function from.Sphere convert a list of angles representing a point
 on a unit sphere to the corresponding Cartesian coordinates.
 }
+\examples{
+from.Sphere(c(pi/3, pi/4, pi/5))
+}

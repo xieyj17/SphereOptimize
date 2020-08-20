@@ -7,7 +7,7 @@
 #'
 #' @return A vector of the corresponding Cartesian coordinates.
 #'
-#' @example
+#' @examples
 #' from.Sphere(c(pi/3, pi/4, pi/5))
 
 from.Sphere = function(theta){
@@ -31,7 +31,7 @@ from.Sphere = function(theta){
 #'
 #' @return A vector of the corresponding angles in spherical coordinating system.
 #'
-#' @example
+#' @examples
 #' s = from.Sphere(c(pi/3, pi/4, pi/5))
 #' theta = to.Sphere(s)
 #' theta = round(theta, 5)
@@ -71,7 +71,7 @@ to.Sphere = function(s){
 #' \item method The optimization algorithm used.
 #' }
 #'
-#' @example
+#' @examples
 #' fn = function(s){
 #'     return(sum(s^3))
 #' }

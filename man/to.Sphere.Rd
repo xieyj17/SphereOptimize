@@ -16,3 +16,9 @@ A vector of the corresponding angles in spherical coordinating system.
 The function to.Sphere convert a list of Cartesian coordinates representing a point
 on a unit sphere to the corresponding spherical coordinates.
 }
+\examples{
+s = from.Sphere(c(pi/3, pi/4, pi/5))
+theta = to.Sphere(s)
+theta = round(theta, 5)
+theta == round(c(pi/3, pi/4, pi/5), 5)
+}

@@ -12,7 +12,7 @@ in Cartesian coordinates and on a unit sphere.}
 
 \item{fn}{A function to be minimized (or maximized).}
 
-\item{neighbor}{Size of neighbor to search for the optimal results. If not specified, this
+\item{neighbor}{Radius of neighbor to search for the optimal results. If not specified, this
 function will search for the whole unit sphere.}
 
 \item{...}{Extra arguments that can be passed to optim().}
@@ -30,4 +30,14 @@ The function SphereOptimize conducts optimization on a unit sphere.
 If the size of neighbor near the initial value is specified, the L-BFGS-B opitmization
 algorithm will be called. Otherwise this function searches the whole unit sphere using
 Nelder-Mead algorithm by default. Other optimization methods are allowed.
+}
+\examples{
+fn = function(s){
+    return(sum(s^3))
+}
+
+s = c(sqrt(2)/2,sqrt(2)/2)
+k = SphereOptimize(s, fn, control = list(fnscale = -1))
+k$value
+k$par
 }
