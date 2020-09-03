@@ -6,4 +6,5 @@ SphereOPtimzie provides a simple tool for numerical optimization on the unit sph
 
 ## Install `SphereOptimize` from Github:
 ```install.packages("SphereOptimize")```
+
 See https://CRAN.R-project.org/package=SphereOptimize for more details.
